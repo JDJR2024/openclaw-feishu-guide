@@ -1,0 +1,48 @@
+{
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_xxxxxxxxxx",
+      "appSecret": "xxxxxxxxxx",
+      "domain": "feishu",
+      "connectionMode": "websocket",
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist",
+      "requireMention": true,
+      "mediaMaxMb": 30,
+      "renderMode": "auto"
+    }
+  }
+}
+
+/*
+配置说明：
+==========
+
+1. 必需参数：
+   - appId: 从飞书开放平台获取
+   - appSecret: 从飞书开放平台获取
+   - connectionMode: 必须为 "websocket"
+
+2. 可选参数：
+   - domain: "feishu"（国内版）或 "lark"（国际版）
+   - dmPolicy: 私聊策略
+     - "pairing": 需要先配对
+     - "open": 开放私聊
+     - "allowlist": 仅允许名单内用户
+   - groupPolicy: 群聊策略
+     - "open": 开放所有群聊
+     - "allowlist": 仅允许名单内群组
+     - "disabled": 禁用群聊
+   - requireMention: 群聊中是否需要@提及机器人
+   - mediaMaxMb: 媒体文件最大大小（MB）
+   - renderMode: 消息渲染模式
+     - "auto": 自动选择
+     - "raw": 纯文本
+     - "card": 富文本卡片
+
+3. 重要提示：
+   - 不需要配置 verificationToken 和 encryptKey
+   - 不需要配置回调URL
+   - 使用WebSocket长连接，不需要公网IP
+*/
